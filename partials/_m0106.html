@@ -1,0 +1,46 @@
+<div class="panel">
+    <div class="panel-heading">Create and Open a Recipe</div>
+    <div class="panel-block">
+        <code>
+            # hello.rb<br>
+            file '/hello.txt' do<br>
+            &ensp; content 'Hello, world!'<br>
+            end
+        </code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Chef-client</div>
+    <div class="panel-block">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                chef-client is an agent that runs locally on every node that is under management by Chef.
+            </div>
+            <div class="column is-12">
+                It will perform all of the steps that are required to bring the node into the expected state.
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">--local-mode (or -z)</div>
+    <div class="panel-block">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                The default mode for chef-client attempts to contact a Chef Server for the recipes to run.
+            </div>
+            <div class="column is-12">
+                Local mode overrides that behavior.
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Run the Recipe</div>
+    <div class="panel-block">
+        <code>sudo chef-client --local-mode hello.rb</code>
+    </div> 
+</div>

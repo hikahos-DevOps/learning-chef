@@ -1,0 +1,68 @@
+<div class="panel">
+    <div class="panel-heading">Cookbook</div>
+    <div class="panel-block">
+        The fundamental unit of configuration and policy distribution.
+    </div> 
+    <div class="panel-block">
+        Cookbooks define a scenario and contain all of the components that are required to support that scenario.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Create a Cookbooks Directory</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>mkdir cookbooks</code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">What is the 'chef' command?</div>
+    <div class="panel-block">
+        It executes the chef program that allows you to generate cookbooks and cookbook components.
+    </div> 
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>chef --help</code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Creating the Apache Cookbook</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>chef generate cookbook cookbooks/apache</code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">File Structure of a Cookbook</div>
+    <div class="panel-block">
+        <img src="../images/cookbook-filestructure.png" width="300">
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Files and Directories in a Cookbook</div>
+    <div class="panel-block">
+        readme.md - the description of the cookbook's features written in Markdown
+    </div> 
+    <div class="panel-block" style="display:block;">
+        metadata.rb - every cookbook requires a small amount of metadata. It may be data like a name, its use, and who to contact for maintenance.<br>
+        <img src="../images/metadata-example.jpg" width="300">
+    </div>
+    <div class="panel-block" style="display:block;">
+        recipes directory - contains Ruby files called recipes<br>
+        There is always a default recipe: default.rb<br>
+        <img src="../images/default-example.bmp" width="300">
+    </div> 
+    <div class="panel-block">
+        spec directory - contains recipes for unit testing<br>
+    </div> 
+    <div class="panel-block">
+        test directory - contains recipes for integration testing<br>
+    </div> 
+    <div class="panel-block">
+        .git directory - Git version control<br>
+    </div> 
+</div>

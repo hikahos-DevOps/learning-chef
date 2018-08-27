@@ -1,0 +1,29 @@
+<div class="panel">
+    <div class="panel-heading">Test and Repair</div>
+    <div class="panel-block">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                chef-client takes action only when it needs to.<br>
+                Think of it as test and repair.
+            </div>
+            <div class="column is-12">
+                Chef looks at the current state of each resource and takes action only when that resource is out of policy.
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Setting File Permissions</div>
+    <div class="panel-block">
+        <code>
+            # hello.rb<br>
+            file '/hello.txt' do<br>
+            &ensp; content 'Hello, world!'<br>
+            &ensp; mode 0644<br>
+            &ensp; owner 'root'<br>
+            &ensp; group 'root'<br>
+            end
+        </code>
+    </div>  
+</div>

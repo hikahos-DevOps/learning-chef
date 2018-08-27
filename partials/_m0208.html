@@ -1,0 +1,59 @@
+<div class="panel">
+    <div class="panel-heading">Templates</div>
+    <div class="panel-block">
+        A cookbook template is an Embedded Ruby (ERB) template that is used to generate files.
+    </div>
+    <div class="panel-block">
+        Templates may contain Ruby expressions and statements.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Template</div>
+    <div class="panel-block">
+        &bull; Use the template resource to add cookbook templates to recipes<br>
+        &bull; Place the corresponding ERB template in a cookbook's /templates directory
+    </div>
+    <div class="panel-block">
+        To use a template, two things must happen:<br>
+        &bull; A template resource must be added to a recipe.<br>
+        &bull; An ERB template must be added to a cookbook.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Command to Generate a Template</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>chef generate template [path/to/cookbook] NAME [options]</code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">ERB</div>
+    <div class="panel-block">
+        An Embedded Ruby (ERB) template allows Ruby code to be embedded inside a text file within specially formatted tags.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Update the Apache server.rb Recipe</div>
+    <div class="panel-block" style="display:block;">
+        Replace the file resource below:<br>
+        <code>
+            ...<br>
+            file '/var/www/html/index.html' do<br>
+            &ensp; content "&lt;h1&gt;Hello, world!&lt;/h1&gt;<br>
+            &ensp; &lt;h2&gt;ipaddress: #{node['ipaddress']}&lt;/h2&gt;<br>
+            &ensp; &lt;h2&gt;hostname: #{node['hostname']}&lt;/h2&gt;"<br>
+            end<br>
+            ...
+        </code><br>
+        with the template resource:<br>
+        <code>
+            template '/var/www/html/index.html' do<br>
+            &emsp; source 'index.html.erb'<br>
+            end
+        </code>
+    </div>
+</div>

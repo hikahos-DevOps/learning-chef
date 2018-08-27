@@ -1,0 +1,84 @@
+<div class="panel">
+    <div class="panel-heading">Can You Test Cookbooks?</div>
+    <div class="panel-block">
+        As you start to define your infrastructure as code, you also need to start thinking about testing it.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Code Testing</div>
+    <div class="panel-block">
+        An automated way to ensure code accomplishes the intended goal and help the team understand its intent.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Steps to Verify Cookbooks</div>
+    <div class="panel-block">
+        &bull; Create virtual machine<br>
+        &bull; Install chef tools<br>
+        &bull; Copy cookbooks<br>
+        &bull; Run/apply cookbooks<br>
+        &bull; Verify assumptions<br>
+        &bull; Destroy virtual machine
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Test Kitchen Commands and Configuration</div>
+    <div class="panel-block">
+        <img src="../images/test-kitchen.png" width="600">
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">.kitchen.yml</div>
+    <div class="panel-block">
+        <img src="../images/kitchen-yml.jpg" width="500">
+    </div>
+    <div class="panel-block">
+        <img src="../images/kitchen-yml-example.png" width="500">
+    </div>
+    <div class="panel-block">
+        When chef generates a cookbook, a default .kitchen.yml is created.<br>
+        It contains kitchen configuration for the driver, provisioner, platform, and suites.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Kitchen Commands</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run this command to show details of the kitchen setup:<br>
+        <code>kitchen list</code>
+    </div> 
+    <div class="panel-block">
+        <img src="../images/kitchen-list.jpg" width="500">
+    </div>
+    <div class="panel-block" style="display:block;">
+        Run this command to create the test kitchen vm:<br>
+        <code>kitchen create</code>
+    </div>
+    <div class="panel-block" style="display:block;">
+        Run this command to install chef into the test kitchen vm:<br>
+        <code>kitchen converge</code>
+    </div>
+    <div class="panel-block" style="display:block;">
+        Run this command to log in to the test kitchen vm:<br>
+        <code>kitchen login</code>
+    </div>
+    <div class="panel-block" style="display:block;">
+        Run this command to run InSpec tests in the test kitchen vm:<br>
+        <code>kitchen verify</code>
+    </div>
+    <div class="panel-block" style="display:block;">
+        Run this command to delete the test kitchen vm:<br>
+        <code>kitchen destroy</code>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">InSpec</div>
+    <div class="panel-block">
+        InSpec tests the actual state of your servers by executing commands locally, via SSH, via WinRM, via Docker API, etc.
+    </div>
+</div>

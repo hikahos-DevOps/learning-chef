@@ -1,0 +1,88 @@
+<div class="panel">
+    <div class="panel-heading">Vagrant and Virtualbox</div>
+    <div class="panel-block" style="display:block;">
+        Requirements for installation:<br>
+        &bull; BIOS supports hardware virtualization<br>
+        &bull; At least 5GB of drive space<br>
+        &bull; 512MB RAM allocated to VMs<br>
+        &bull; Hyper-V disabled in Windows<br>
+        &ensp; In a PowerShell administrator prompt, type:<br>
+        &ensp; &ensp; <code>Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code>
+    </div>  
+    <div class="panel-block" style="display:block;">
+        After installation, verify using these commands:<br>
+        <code>vagrant --version</code><br>
+        <code>VBoxManage --version</code>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Install the CentOS 7.2 Box</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>vagrant box add bento/centos-7.2 --provider=virtualbox</code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Launch the CentOS 7.2 Box</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        To create the Vagrantfile: <code>vagrant init bento/centos-7.2</code><br>
+        To start the VM: <code>vagrant up</code> 
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Log In to the CentOS 7.2 Box</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>vagrant ssh</code> - if there are more than one VM, the VM name is needed, e.g. 'web1'
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Install the ChefDK</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run:<br>
+        <code>curl -L https://omnitruck.chef.io/install.sh | sudo bash</code> 
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Common Vagrant Commands</div>
+    <div class="panel-block" style="display:block;">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-half">
+                &emsp; &bull; vagrant ssh-config
+            </div>
+            <div class="column">
+                - displays connection details
+            </div>
+            <div class="column is-half">
+                &emsp; &bull; vagrant init
+            </div>
+            <div class="column">
+                - creates a Vagrant file
+            </div>
+            <div class="column is-half">
+                &emsp; &bull; vagrant status
+            </div>
+            <div class="column">
+                - lists VMs and their status
+            </div>
+            <div class="column is-half">
+                &emsp; &bull; vagrant suspend
+            </div>
+            <div class="column">
+                - saves VM state and shuts down
+            </div>
+            <div class="column is-half">
+                &emsp; &bull; vagrant destroy --force
+            </div>
+            <div class="column">
+                - destroys all running VMs
+            </div>
+        </div>
+    </div> 
+</div>

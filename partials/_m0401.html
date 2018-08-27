@@ -1,0 +1,36 @@
+<div class="panel">
+    <div class="panel-heading">Chef Manage</div>
+    <div class="panel-block" style="display:block;">
+        Administration tab:<br>
+        <img src="../images/chef-admin.png" width="600">
+    </div>
+    <div class="panel-block" style="display:block;">
+        Policy tab:<br>
+        <img src="../images/chef-policy.png" width="600">
+    </div>
+    <div class="panel-block" style="display:block;">
+        Nodes tab:<br>
+        <img src="../images/chef-node.png" width="600">
+    </div>
+    <div class="panel-block" style="display:block;">
+        Reports tab:<br>
+        <img src="../images/chef-reports.png" width="600">
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Knife Node Commands</div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run this command to show details of a node:<br>
+        <code>kitchen node show NAME</code>
+    </div> 
+    <div class="panel-block" style="display:block;">
+        add '-a' to specify a node attribute:<br>
+        <code>
+            kitchen node show NAME -a ipaddress<br>
+            &nbsp;kitchen node show NAME -a hostname<br>
+            &nbsp;kitchen node show NAME -a memory.total<br>
+            &nbsp;kitchen node show NAME -a cloud.public_ipv4
+        </code>
+    </div>
+</div>

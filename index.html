@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="en" />
+    <title>Learning Chef</title>
+    <link href="images/favicon.png" rel="icon" type="image/png">
+    <link href="images/favicon.ico" rel="shortcut icon">    
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/layout-default-latest.css" />
+    <link rel="stylesheet" type="text/css" href="css/themes/base/jquery.ui.all.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+	<!-- CUSTOMIZE/OVERRIDE THE DEFAULT CSS -->
+	<style type="text/css">
+        /* remove padding and scrolling from elements that contain an Accordion OR a content-div */
+        .ui-layout-center ,	/* has content-div */
+        .ui-layout-west ,	/* has Accordion */
+        .ui-layout-east ,	/* has content-div ... */
+        .ui-layout-east .ui-layout-content { /* content-div has Accordion */
+            padding:0;
+            overflow:hidden;
+        }
+        .ui-layout-center P.ui-layout-content {
+            line-height:1.4em;
+            margin:0; 
+        }
+        h3, h4 { /* Headers & Footer in Center & East panes */
+            font-size:1em;
+            background:#333;
+            color:#fff;
+            border:1px solid #BBB;
+            border-width:0 0 1px;
+            padding:5px 0 5px 10px;
+            margin:0;
+        }
+        .ui-layout-east h4 { /* Footer in East-pane */
+            font-size:0.9em;
+            font-weight:normal;
+            border-width:1px 0 0;
+        }
+        .ui-layout-north {
+            background:#333;
+            padding:0 10px 10px 10px;
+        }
+        .ui-accordion-content {
+            background:#444;
+        }
+        h5 {
+            color:#999;
+            padding: 0 0 0 5px;
+        }
+        a {
+            padding-left: 5px;
+        }
+        .panel {
+            font-size: 0.9rem;
+        }
+	</style>
+</head>
+<body id="body">
+    <!--jquery ui layout-->
+    <div class="ui-layout-north ui-widget-content">
+        <div id="banner"></div>
+        <div id="header">
+            <div id="logo">
+                <a href="#"><img src="images/logo.svg" alt="Chef Manage"></a>
+            </div>
+            <div id="mainnav">
+                Learning Chef
+            </div>
+        </div>
+    </div>
+    
+    <div class="ui-layout-south ui-widget-content"></div>
+    
+    <div class="ui-layout-center"> 
+        <h3 id="center-header" class="ui-widget-header"></h3>
+        <div id="center-content" class="ui-layout-content ui-widget-content"></div>
+    </div>
+    
+    <div class="ui-layout-west">
+        <div id="accordion" class="basic">
+            <h4><a href="#">Module 01</a></h4>
+            <div>
+                <h5>Getting Started with Chef</h5>
+                <ul>
+                    <li><a id="m0101" href="#">Configuration management</a></li>
+                    <li><a id="m0102" href="#">CM platforms</a></li>
+                    <li><a id="m0103" href="#">What is Chef</a></li>
+                    <li><a id="m0104" href="#">ChefDK</a></li>
+                    <li><a id="m0105" href="#">Development environment</a></li>
+                    <li><a id="m0106" href="#">Chef recipe</a></li>
+                </ul>
+            </div>
+            <h3><a href="#">Module 02</a></h3>
+            <div>
+                <h5>From Recipes to Cookbooks</h5>
+                <ul>
+                    <li><a id="m0201" href="#">Resources and recipes</a></li>
+                    <li><a id="m0202" href="#">Test and repair</a></li>
+                    <li><a id="m0203" href="#">Organize recipes with cookbooks</a></li>
+                    <li><a id="m0204" href="#">The Apache cookbook</a></li>
+                    <li><a id="m0205" href="#">Apply cookbooks</a></li>
+                    <li><a id="m0206" href="#">Ruby and resources</a></li>
+                    <li><a id="m0207" href="#">Ohai - the node object</a></li>
+                    <li><a id="m0208" href="#">Templates and embedded Ruby</a></li>
+                </ul>
+            </div>
+            <h3><a href="#">Module 03</a></h3>
+            <div>
+                <h5>The Chef Server</h5>
+                <ul>
+                    <li><a id="m0301" href="#">Benefits of the Chef server</a></li>
+                    <li><a id="m0302" href="#">Hosted Chef</a></li>
+                    <li><a id="m0303" href="#">Bootstrap a node</a></li>
+                    <li><a id="m0304" href="#">Test Kitchen</a></li>                  
+                </ul>
+            </div>
+            <h3><a href="#">Module 04</a></h3>
+            <div>
+                <h5>Going Full Scale</h5>
+                <ul>
+                    <li><a id="m0401" href="#">Manage multiple nodes</a></li>
+                    <li><a id="m0402" href="#">Chef Supermarket</a></li>
+                    <li><a id="m0403" href="#">Wrapper cookbooks</a></li>
+                    <li><a id="m0404" href="#">Berkshelf</a></li>
+                    <li><a id="m0405" href="#">Server artifacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ui-layout-east ui-widget-content"></div>
+    <!--jquery ui layout-->
+
+    <!-- REQUIRED scripts for layout widget -->
+    <script type="text/javascript" src="js/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-latest.js"></script>
+    <script type="text/javascript" src="js/jquery.layout-latest.js"></script>
+    <script type="text/javascript" src="js/jquery.layout.resizePaneAccordions-latest.js"></script>
+    <script type="text/javascript" src="js/themeswitchertool.js"></script> 
+    <script type="text/javascript" src="js/debug.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html> 

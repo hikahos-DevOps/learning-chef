@@ -1,0 +1,61 @@
+<div class="panel">
+    <div class="panel-heading">Ohai</div>
+    <div class="panel-block" style="display:block;">
+        Ohai is a tool that already captures all the data about system resources.<br>
+        <img src="../images/ohai.jpg" width="400">
+    </div>
+    <div class="panel-block" style="display:block;">
+        Example Ohai commands:<br>
+        <code>
+            ohai ipaddress<br>
+            &nbsp;ohai hostname <br>
+            &nbsp;ohai memory
+        </code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">All About the System</div>
+    <div class="panel-block">
+        &bull; Ohai queries the operating system with a number of commands.<br>
+        &bull; The data is presented in JSON format.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Ohai + chef-client</div>
+    <div class="panel-block">
+        chef-client and chef-apply automatically executes ohai and stores the data about the node in an object you can use within the recipes named node.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">The Node Object</div>
+    <div class="panel-block">
+        The node object is a representation of our system. It stores all the attributes found about the system.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Node Details in the Webserver</div>
+    <div class="panel-block">
+        &bull; The file resource named '/var/www/html/index.html' can be updated with the content that includes the node details:<br>
+        &emsp; ipaddress<br>
+        &emsp; hostname
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Update the Apache server.rb Recipe</div>
+    <div class="panel-block">
+        <code>
+            ...<br><br>
+            file '/var/www/html/index.html' do<br>
+            &ensp; content "&lt;h1&gt;Hello, world!&lt;/h1&gt;<br>
+            &ensp; &lt;h2&gt;ipaddress: #{node['ipaddress']}&lt;/h2&gt;<br>
+            &ensp; &lt;h2&gt;hostname: #{node['hostname']}&lt;/h2&gt;"<br>
+            end<br><br>
+            ...
+        </code>
+    </div>
+</div>

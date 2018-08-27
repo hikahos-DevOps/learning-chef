@@ -1,0 +1,53 @@
+<div class="panel">
+    <div class="panel-heading">Server Artifacts</div>
+    <div class="panel-block">
+        In addition to storing cookbooks, the Chef Server can also hold additional pieces of policy - artifacts that nodes can utilize for more specific configurations.<br>
+        Thse include roles, environments, and data bags.  
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Roles</div>
+    <div class="panel-block">
+        &bull; A role describes a run list of recipes that are executed on the node.<br>
+        &bull; A role may also define new defaults or overrides for existing cookbook attribute values.<br>
+        &bull; When you assign a role to a node, you do so in its run list.<br>
+        &bull; This allows you to configure many nodes in a similar fashion.  
+    </div>
+    <div class="panel-block" style="display:block;">
+        Example web role:<br>
+        <img src="../images/chef-role.jpg" width="500">
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Environments</div>
+    <div class="panel-block">
+        &bull; Environments can define different functions of nodes that live on the same system.
+    </div>
+    <div class="panel-block" style="display:block;">
+        <img src="../images/chef-environments.png" width="500">
+    </div>
+    <div class="panel-block" style="display:block;">
+        <img src="../images/chef-environment-file.png" width="500">
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Bootstrapping with a Role and Environment</div>
+    <div class="panel-block">
+        <div class="panel-block" style="display:block;">
+            <code>knife bootstrap FQDN -x USER -P PWD --sudo -N NAME --r "role[web]" --E production</code>
+        </div> 
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Data Bags</div>
+    <div class="panel-block">
+        &bull; A data bag is a container for items that represent information about your infrastructure that is not tied to a single node.
+    </div>
+    <div class="panel-block" style="display:block;">
+        <img src="../images/chef-data-bag.jpg" width="500">
+    </div>
+</div>

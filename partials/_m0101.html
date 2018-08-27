@@ -1,0 +1,97 @@
+<div class="panel">
+    <div class="panel-heading">Configuration Management (CM)</div>
+    <div class="panel-block">
+        Application of programmatic methods that create consistency in the performance, function, design, and operation of compute resources
+    </div>
+    <div class="panel-block">
+        Applied over the life cycle of a system
+    </div>
+    <div class="panel-block">
+        Verification of performance through testing
+    </div>
+    <div class="panel-block">
+        Use of pre-configured code to accomplish common tasks
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">CM Return on Investment: Sources</div>
+    <div class="panel-block">
+        Cost avoidance
+    </div>
+    <div class="panel-block">
+        Prevention of catastrophic events
+    </div>
+    <div class="panel-block">
+        Exponential increase of time savings in the form of reusable code
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">CM Example</div>
+    <div class="panel-block">
+        &bull; A template that contains everything needed for:<br>
+        &emsp; Launching an instance from a public cloud<br>
+        &emsp; Installing a database on that instance<br>
+        &emsp; Making that database available for access by web servers<br>
+        &emsp; Implementing a unique username and password for this database<br>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Apache Server Installation Example</div>
+    <div class="panel-block">
+<pre>
+package 'httpd' do
+  action :install
+end
+
+file '/var/www/html/index.html' do
+  content 'Hello World'
+  action :create
+end
+
+service 'http' do
+  action :start
+end
+</pre>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Configuring Multiple Servers Identically</div>
+    <div class="panel-block">
+        &bull; Scripts can be rolled out to thousands of servers.<br>
+        &emsp; The previous code example can be applied to one or ten thousand servers.<br>
+        &emsp; The end result will be that each server is configured identically, as specified in the script.<br>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Utilizing Variables Across Servers</div>
+    <div class="panel-block">
+        &bull; Variables can be used for customization.<br>
+        &bull; Each configuration management platform has the ability to utilize variables.<br>
+        &bull; These variables allow for one script to employ unique values on each server.<br>
+        &bull; They can be set in the script or, more commonly, in other locations, providing global controls and portability.<br>
+    </div>
+</div>
+<div class="panel">
+    <div class="panel-heading">Example 2: Variables for a Database</div>
+    <div class="panel-block">
+<pre>
+# first we set the variables in a config management variable file.
+['database']['user'] = 'myDBuser'
+['database']['password'] = 'myDBpasswd'
+
+# next, we use the variables when configuring the database.
+file 'C:\ProgramData\my.ini' do
+  content "
+    user=#{['database']['user']}
+    password=#{['database']['passwd']}
+  "
+  rights :read, 'Everyone'
+end
+</pre>
+    </div>
+</div>

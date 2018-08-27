@@ -1,0 +1,82 @@
+<div class="panel">
+    <div class="panel-heading">Infrastructure as Code</div>
+    <div class="panel-block">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                The Chef platform manages any server component
+            </div>
+            <div class="column is-12">
+                &bull; System Resources:
+            </div>
+            <div class="column is-12">
+                <code>Packages, files, services, users, groups, mount points, symlinks, networking components, registry keys, Bash scripts, and PowerShell scripts, etc.</code>
+            </div>
+        </div> 
+    </div>    
+    <div class="panel-block">
+        &bull; System resources are represented as code components.<br>
+        &bull; Infrastructure becomes versionable, testable, and repeatable, while abstracting complex implementation details out.
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Chef Architecture</div>
+    <div class="panel-block">
+        Chef ecosphere components:<br>
+        &bull; Workstation - where you author and test Chef code<br>
+        &bull; Chef Server - where cookbooks are distributed to managed nodes<br>
+        &bull; Nodes - synchronizes with the server and pulls updates to policies
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Overview of Chef Architecture</div>
+    <div class="panel-block" style="justify-content: center;">
+        <img src="../images/m0301a.png">
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">The Workstation</div>
+    <div class="panel-block">
+        A Chef workstation is where you will develop and test your code.<br>
+        &bull; Is configured with Chef command-line tools<br>
+        &bull; Allows authoring and testing of Chef code<br>
+        &bull; Can interact with a Chef Server and any managed nodes
+    </div>  
+    <div class="panel-block">
+        &bull; To set up a workstation, install the Chef Development Kit (ChefDK)<br>
+        &bull; Navigate to https://downloads.chef.io/chef-dk/ and select the appropriate installer
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">The Chef Server</div>
+    <div class="panel-block">
+        The Chef Server is your hub for configuration data.<br>
+        &bull; Stores cookbooks, roles, environments, and other policies needed for configuration<br>
+        &bull; Indexes metadata about nodes<br>
+        &bull; Acts as a pull server for your nodes
+    </div>  
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Nodes</div>
+    <div class="panel-block">
+        Nodes do the heavy lifting of configuring themselves, not the Chef Server.<br>
+        &bull; Can be physical, virtual, cloud, network devices, containers, etc.<br>
+        &bull; Use the chef-client service to pull and apply cookbooks from the Chef Server. This process is known as convergence.<br>
+        &bull; Run system inventory and gather host details with the Ohai tool
+    </div>  
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Using Chef: Core Components</div>
+    <div class="panel-block">
+        Basic Chef terms and concepts<br>
+        &bull; Resource<br>
+        &bull; Recipe<br>
+        &bull; Cookbook<br>
+        &bull; Node object attributes
+    </div>  
+</div>

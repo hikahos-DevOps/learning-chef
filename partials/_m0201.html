@@ -1,0 +1,61 @@
+<div class="panel">
+    <div class="panel-heading">Chef Resource</div>
+    <div class="panel-block">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                A way to manage a system component
+            </div>
+            <div class="column is-12">
+                A statement of configuration policy
+            </div>
+            <div class="column is-12">
+                It describes the desired state of an element of your infrastructure and the steps needed to bring that item to the desired state.
+            </div>
+        </div>
+    </div> 
+    <div class="panel-block" style="display:block;">
+        Example: Package<br>
+        <code>
+            package 'httpd' do<br>
+            &ensp; action :install<br>
+            end
+        </code>
+    </div> 
+    <div class="panel-block" style="display:block;">
+        Example: Service<br>
+        <code>
+            service 'ntp' do<br>
+            &ensp; action [ :enable, :start ]<br>
+            end
+        </code>
+    </div> 
+    <div class="panel-block" style="display:block;">
+        Example: File<br>
+        <code>
+            file '/etc/motd' do<br>
+            &ensp; content 'I am the message of the day!'<br>
+            end
+        </code>
+    </div> 
+    <div class="panel-block" style="display:block;">
+        Example: File<br>
+        <code>
+            file '/etc/php.ini.default' do<br>
+            &ensp; action :delete<br>
+            end
+        </code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Resource Definition</div>
+    <div class="panel-block" style="display:block;">
+        <code>
+            file '/hello.txt' do<br>
+            &ensp; content 'Hello, world!'<br>
+            &ensp; action :create<br>
+            end<br>
+        </code>
+        The TYPE (<code class="has-background-warning">file</code>) named NAME (<code class="has-background-warning">'/hello.txt'</code>) should be ACTION'd (<code class="has-background-warning">:create</code>) with PROPERTIES (<code class="has-background-warning">'Hello, world!'</code>).
+    </div> 
+</div>

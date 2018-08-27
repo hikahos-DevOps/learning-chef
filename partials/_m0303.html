@@ -1,0 +1,43 @@
+<div class="panel">
+    <div class="panel-heading">The Node</div>
+    <div class="panel-block">
+        <img src="../images/chef-server-nodes.png" width="500">
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Bootstrap Your Node</div>
+    <div class="panel-block">
+        Example: use a new instance provisioned with AWS, and bootstrap it as a managed node
+    </div>
+    <div class="panel-block">
+        You'll need the FQDN or public IP of that instance to perform the operation.
+    </div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run this command to get a list of nodes:<br>
+        <code>knife node list</code>
+    </div> 
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Bootstrapping a Node</div>
+    <div class="panel-block">
+        Often, the node you are bootstrapping may not have the chef-client installed.<br>
+        It may also not have details of where the Chef Server is located or the credentials to securely talk to that server.
+    </div>
+    <div class="panel-block">
+        To add those credentials, you can bootstrap that node to install all those components.
+    </div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run this command to bootstrap a node:<br>
+        <code>knife bootstrap FQDN -x USER -P PWD --sudo -N node1 -r "recipe[cookbook]"</code>
+    </div>
+    <div class="panel-block" style="display:block;">
+        In the SSH client, run this command to get details of a bootstrapped node:<br>
+        <code>knife node show node1</code>
+    </div> 
+    <div class="panel-block" style="display:block;">
+        The Chef Manage page also displays the bootstrapped nodes and details:<br>
+        <img src="../images/chef-nodes.png" width="700">
+    </div>
+</div>

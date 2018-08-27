@@ -1,0 +1,54 @@
+<div class="panel">
+    <div class="panel-heading">--runlist (or -r) "recipe[COOKBOOK::RECIPE]"</div>
+    <div class="panel-block">
+        In local mode, Chef needs a list of recipes to apply to the system.<br>
+        This is called a run list.<br>
+        A run list is an ordered collection of recipes to execute.
+    </div>
+    <div class="panel-block">
+        Each recipe in the run list must be addressed with the format<br>
+        recipe[COOKBOOK::RECIPE]
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">Running an Example in Local Mode</div>
+    <div class="panel-block">
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                <code>sudo chef-client --local-mode --runlist "recipe[apache::server]"</code>
+            </div>
+            <div class="column is-12">
+                shortcut for '--local-mode --runlist' is '-zr'
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">-r "recipe[COOKBOOK(::default)]"</div>
+    <div class="panel-block">
+        When you are referencing the default recipe within a cookbook, you may optionally specify only the name of the cookbook.
+    </div>
+    <div class="panel-block">
+        chef-client understands that you mean to apply the default recipe from within that cookbook.
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">include_recipe</div>
+    <div class="panel-block">
+        A recipe can include one or more recipes located in cookbooks by using the include_recipe method.
+    </div>
+    <div class="panel-block">
+        When a recipe is included, the resources found in that recipe will be inserted sequentially at the point where the include_recipe keyword is located.
+    </div>
+    <div class="panel-block">
+        <div class="panel">
+            <div class="panel-heading">default.rb</div>
+            <div class="panel-block">
+                <code>include_recipe 'apache::server'</code>
+            </div> 
+        </div>
+    </div>
+</div>
